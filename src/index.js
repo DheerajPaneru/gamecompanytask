@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import store from './Store';
 import reportWebVitals from './reportWebVitals';
-
+import Router from './Route';
+import { Provider } from 'react-redux';
+import { GameContext } from './GameContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <Provider store={store}>
+      <GameContext>    
+      <Router/>
+      </GameContext>
+      </Provider>
   </React.StrictMode>
 );
 
